@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+
+  notebooks_gpu_server:
+    build:
+       context: ./notebooks_gpu
+       dockerfile: ./Dockerfile
+    container_name: notebooks_gpu_container
+    volumes:
+      - ../Notebooks:/workdir/Notebooks
+      - ../Data:/workdir/Data
+      - ../Scripts:/workdir/Scripts
+      - ../Models:/workdir/Models
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    ports:
+      - 8888:8888
+      - 7860:7860
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
