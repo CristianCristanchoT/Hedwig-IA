@@ -15,7 +15,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     ports:
       - 8888:8888
-      - 7860:7860
+      - 8501:8501
     ipc: host
     deploy:
       resources:

@@ -31,6 +31,6 @@ WORKDIR /workdir
 RUN git clone https://github.com/NVIDIA-AI-IOT/nanoowl
 
 EXPOSE 8888
-EXPOSE 7860
+EXPOSE 8501
 
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/workdir --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''"]
