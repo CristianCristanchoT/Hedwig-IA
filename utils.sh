@@ -24,6 +24,20 @@ then
   printf "${RED}Closing development enviroment${COLOR_OFF}\n"
   docker-compose -f Docker/docker-compose.yaml down
 
+elif [ $1 == '--start_prod' ]
+then
+
+  printf "${GREEN}Starting service${COLOR_OFF}\n"
+  docker build -t cristiancristanchot/hedwig_ai:latest Docker/Hedwig
+  docker run --name hedwig_container -d --gpus all -p 8501:8501 cristiancristanchot/hedwig_ai:latest
+
+elif [ $1 == '--close_prod' ]
+then
+
+  printf "${RED}Closing service${COLOR_OFF}\n"
+  docker stop hedwig_container
+  docker rm hedwig_container
+
 elif [ $1 == '--help' ]
 then
 
