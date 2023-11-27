@@ -27,10 +27,13 @@ RUN pip install git+https://github.com/openai/CLIP.git
 RUN pip3 install git+https://github.com/NVIDIA-AI-IOT/torch2trt.git@v0.4.0
 RUN pip3 install git+https://github.com/NVIDIA-AI-IOT/nanoowl.git
 
+RUN useradd -m -u 1000 user
+USER user
+
 WORKDIR /workdir
-COPY ./main.py main.py
-COPY models models
+COPY --chown=user ./main.py main.py
+COPY --chown=user models models
 
-EXPOSE 8501
+EXPOSE 7860
 
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+CMD ["streamlit", "run", "main.py", "--server.port=7860", "--server.address=0.0.0.0", "--server.headless=true", "--server.enableCORS=false", "--server.enableXsrfProtection=false", "--server.fileWatcherType=none"]

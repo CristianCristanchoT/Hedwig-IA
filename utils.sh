@@ -29,7 +29,7 @@ then
 
   printf "${GREEN}Starting service${COLOR_OFF}\n"
   docker build -t cristiancristanchot/hedwig_ai:latest Docker/Hedwig
-  docker run --name hedwig_container -d --gpus all -p 8501:8501 cristiancristanchot/hedwig_ai:latest
+  docker run --name hedwig_container -d --gpus all -p 7860:7860 cristiancristanchot/hedwig_ai:latest
 
 elif [ $1 == '--close_prod' ]
 then

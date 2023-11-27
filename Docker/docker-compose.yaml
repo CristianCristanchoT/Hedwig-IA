@@ -16,6 +16,7 @@ services:
     ports:
       - 8888:8888
       - 8501:8501
+      - 7860:7860
     ipc: host
     deploy:
       resources:

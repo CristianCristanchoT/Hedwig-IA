@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from PIL import Image
 
+os.environ['SENTENCE_TRANSFORMERS_HOME'] = '../Models/SENTENCE_TRANSFORMERS_HOME'
+os.environ['TRANSFORMERS_CACHE'] = '../Models/TRANSFORMERS_CACHE'
+
 from nanoowl.owl_predictor import OwlPredictor
 from nanoowl.tree_predictor import (
     TreePredictor, Tree

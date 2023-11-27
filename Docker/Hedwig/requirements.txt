@@ -10,5 +10,4 @@ nvidia-pyindex==1.0.9
 transformers==4.32.1
 timm==0.9.10
 accelerate==0.24.1
-streamlit==1.28.2
-streamlit-lottie==0.0.5
+streamlit==1.22.0
