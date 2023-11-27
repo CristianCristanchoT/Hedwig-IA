@@ -230,7 +230,7 @@ def main():
 
     # Main page
 
-    st.write("# Hedwig AI :owl:")
+    st.write("# [Hedwig AI :owl:](https://github.com/CristianCristanchoT/Hedwig-IA)")
     st.write(
         "Try uploading an image and write what you want to detect in the image. :grin:"
     )
